@@ -1,66 +1,66 @@
 class Stack {
 
-  // store elements of stack
+  // yığının öğelerini sakla
   private int arr[];
-  // represent top of stack
+  // yığının üstünü temsil eder
   private int top;
-  // total capacity of the stack
+  // yığının toplam kapasitesi
   private int capacity;
 
-  // Creating a stack
+  // Yığın oluşturma
   Stack(int size) {
-    // initialize the array
-    // initialize the stack variables
+    // diziyi başlat
+    // yığın değişkenlerini başlat
     arr = new int[size];
     capacity = size;
     top = -1;
   }
 
-  // push elements to the top of stack
+ // elemanları yığının en üstüne it
   public void push(int x) {
     if (isFull()) {
       System.out.println("Stack OverFlow");
 
-      // terminates the program
+      // programı sonlandırır
       System.exit(1);
     }
 
-    // insert element on top of stack
+    // elemanı yığının üstüne ekle
     System.out.println("ekle " + x);
     arr[++top] = x;
   }
 
-  // pop elements from top of stack
+ // elemanları yığının tepesinden çıkar
   public int pop() {
 
-    // if stack is empty
-    // no element to pop
+// yığın boşsa
+    // açılacak öğe yok
     if (isEmpty()) {
       System.out.println("STACK EMPTY");
-      // terminates the program
+      // programı sonlandırır
       System.exit(1);
     }
 
-    // pop element from top of stack
+   // yığının tepesinden eleman çıkar
     return arr[top--];
   }
 
-  // return size of the stack
+  // yığının boyutunu döndürür
   public int getSize() {
     return top + 1;
   }
 
-  // check if the stack is empty
+ // yığının boş olup olmadığını kontrol et
   public Boolean isEmpty() {
     return top == -1;
   }
 
-  // check if the stack is full
+  // yığının dolu olup olmadığını kontrol et
   public Boolean isFull() {
     return top == capacity - 1;
   }
 
-  // display elements of stack
+ // yığının öğelerini göster
   public void printStack() {
     for (int i = 0; i <= top; i++) {
       System.out.print(arr[i] + ", ");
@@ -77,7 +77,8 @@ class Stack {
     System.out.print("Stack: ");
     yigin.printStack();
 
-    // remove element from stack
+   
+  // elemanı yığından kaldır
     yigin.pop();
     System.out.println("\n en son hali ");
     yigin.printStack();
